@@ -6,4 +6,4 @@ This program displays a question with 4 possible answers. The player can choose 
 
 ### Developed by:
 **Panagiotis Kotsorgios**  
-Student at the Department of Computer Science, **D.S.A.A.E.K. Messolonghi**  
+Student at the Department of, **S.A.E.K. Messolonghi**  
