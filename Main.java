@@ -13,7 +13,7 @@ public class Main {
     private int currentQuestionIndex = 0;
     private int score = 0;
 
-    // Java-related questions, options, and correct answers
+    //  questions, options, and correct answers
     private final String[] questions = {
             "1. What is the size of an int in Java?",
             "2. Which keyword is used to inherit a class in Java?",
@@ -33,18 +33,18 @@ public class Main {
     private final int[] correctAnswers = {0, 0, 0, 1, 0};  // Indices of correct answers
 
     public Main() {
-        // Set up frame and panel
+        //  frame and panel
         frame = new JFrame("Java Programming Quiz");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        // Set up question label
+        //  question label
         questionLabel = new JLabel(questions[currentQuestionIndex]);
         questionLabel.setFont(new Font("Arial", Font.BOLD, 18));
         panel.add(questionLabel);
 
-        // Initialize radio buttons for options
+        //  radio buttons for options
         answerButtons = new JRadioButton[4];
         buttonGroup = new ButtonGroup();
         for (int i = 0; i < 4; i++) {
@@ -54,10 +54,10 @@ public class Main {
             panel.add(answerButtons[i]);
         }
 
-        // Submit button to check answers
+        // Submit button 
         submitButton = new JButton("Submit");
         submitButton.setFont(new Font("Arial", Font.BOLD, 16));
-        submitButton.setBackground(new Color(30, 144, 255));  // Professional blue color
+        submitButton.setBackground(new Color(30, 144, 255)); 
         submitButton.setForeground(Color.WHITE);
         submitButton.setOpaque(true);
         submitButton.setBorderPainted(false);
@@ -76,7 +76,7 @@ public class Main {
         });
         panel.add(submitButton);
 
-        // Set frame properties
+        
         frame.add(panel);
         frame.setSize(600, 400);
         frame.setLocationRelativeTo(null);
@@ -105,12 +105,12 @@ public class Main {
         // Check if the answer is correct and give feedback
         if (selectedAnswerIndex == correctAnswers[currentQuestionIndex]) {
             // Update button color for correct answer
-            submitButton.setBackground(new Color(50, 205, 50));  // Green for correct
+            submitButton.setBackground(new Color(50, 205, 50));  // Green color
             submitButton.setText("Correct!");
-            score++;  // Increase score
+            score++; 
         } else {
             // Update button color for incorrect answer
-            submitButton.setBackground(new Color(255, 69, 0));  // Red for incorrect
+            submitButton.setBackground(new Color(255, 69, 0));  // Red color
             submitButton.setText("Incorrect! Correct answer: " + options[currentQuestionIndex][correctAnswers[currentQuestionIndex]]);
         }
 
@@ -118,7 +118,7 @@ public class Main {
         Timer timer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                submitButton.setBackground(new Color(30, 144, 255));  // Reset to original blue
+                submitButton.setBackground(new Color(30, 144, 255));  
                 submitButton.setText("Submit");
             }
         });
@@ -130,9 +130,10 @@ public class Main {
     private void showResults() {
         String message = "Quiz Over! Your score: " + score + "/" + questions.length;
         JOptionPane.showMessageDialog(frame, message, "Results", JOptionPane.PLAIN_MESSAGE);
-        frame.dispose(); // Close the frame after showing results
+        frame.dispose(); 
     }
 
+    //main function
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new Main());
     }
